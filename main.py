@@ -215,7 +215,7 @@ def main_worker(args):
     time_stamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     if args.evaluate:
         args.results_dir = '/tmp'
-    if args.save is '':
+    if args.save == '':
         args.save = time_stamp
     save_path = os.path.join(args.results_dir, args.save)
 
@@ -236,7 +236,7 @@ def main_worker(args):
         os.makedirs(save_path)
 
     setup_logging(os.path.join(save_path, 'log.txt'),
-                  resume=args.resume is not '',
+                  resume=args.resume != '',
                   dummy=args.distributed and args.local_rank > 0)
 
     results_path = os.path.join(save_path, 'results')
@@ -259,7 +259,7 @@ def main_worker(args):
     dataset_type = 'imagenet' if args.dataset =='imagenet_calib' else args.dataset
     model_config = {'dataset': dataset_type}
 
-    if args.model_config is not '':
+    if args.model_config != '':
         if isinstance(args.model_config, dict):
             for k, v in args.model_config.items():
                 if k not in model_config.keys():

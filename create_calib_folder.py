@@ -2,8 +2,8 @@
 import os
 import shutil
 
-basepath = '/home/Datasets/imagenet/train/'
-basepath_calib = '/home/Datasets/imagenet/calib/'
+basepath = '/data/dataset/imagenet/ilsvrc2012/torchvision/train'
+basepath_calib = '/data/dataset/imagenet/ilsvrc2012/torchvision/imagenet/calib/'
 
 directory = os.fsencode(basepath)
 os.mkdir(basepath_calib)

@@ -1,4 +1,5 @@
-export datasets_dir=/media/drive/Datasets
+#!/usr/bin/env bash
+export datasets_dir=/data/dataset/imagenet/ilsvrc2012/torchvision
 export model=${1:-"resnet"}
 export model_vis=${2:-"resnet50"}
 export nbits_weight=${3:-4}
@@ -6,7 +7,7 @@ export nbits_act=${4:-4}
 export perC=True
 export num_sp_layers=-1
 export perC_suffix=''
-export adaquant=True
+export adaquant=${6:-True}
 if [ "$adaquant" = True ]; then
     export adaquant_suffix='.adaquant'
 fi

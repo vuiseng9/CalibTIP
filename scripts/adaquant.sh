@@ -1,4 +1,5 @@
-export datasets_dir=/media/drive/Datasets
+#!/usr/bin/env bash
+export datasets_dir=/data/dataset/imagenet/ilsvrc2012/torchvision
 export model=${1:-"resnet"}
 export model_vis=${2:-"resnet50"}
 export nbits_weight=${3:-4}
